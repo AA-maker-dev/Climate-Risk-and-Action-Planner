@@ -21,6 +21,7 @@ Climate change poses unprecedented challenges:
 ## 💡 Our Solution
 
 An intelligent platform that:
+
 1. **Analyzes** location-specific climate risks using AI
 2. **Predicts** future climate scenarios and trends
 3. **Generates** personalized action plans with cost estimates
@@ -32,12 +33,14 @@ An intelligent platform that:
 ## 🚀 Key Features
 
 ### 1. AI-Powered Risk Assessment
+
 - Real-time climate data integration
 - Multi-factor risk analysis (floods, wildfires, hurricanes, droughts, heatwaves, sea level rise)
 - Location-based risk scoring (0-100)
 - Confidence metrics for transparency
 
 ### 2. Intelligent Action Planner
+
 - Personalized recommendations based on risk profile
 - Priority-based action categorization (Critical, High, Medium, Low)
 - Cost estimation and impact scoring
@@ -45,6 +48,7 @@ An intelligent platform that:
 - 100+ action templates across 6 categories
 
 ### 3. Carbon Footprint Calculator
+
 - Track emissions across 4 categories:
   - Transportation (7 activities)
   - Energy (6 sources)
@@ -55,6 +59,7 @@ An intelligent platform that:
 - Personalized reduction suggestions
 
 ### 4. Climate Predictions
+
 - Future risk projections (5-30 years)
 - Temperature and precipitation trends
 - Sea level rise forecasts
@@ -62,6 +67,7 @@ An intelligent platform that:
 - Multiple scenario modeling (Optimistic, Moderate, Pessimistic)
 
 ### 5. Interactive Dashboard
+
 - Comprehensive risk overview
 - Action tracking and progress monitoring
 - Historical assessment records
@@ -72,6 +78,7 @@ An intelligent platform that:
 ## 🛠️ Technology Stack
 
 ### Backend
+
 - **Framework**: FastAPI (Python)
 - **AI/ML**: Custom risk assessment models, predictive analytics
 - **Database**: SQLite (easily upgradeable to PostgreSQL)
@@ -79,6 +86,7 @@ An intelligent platform that:
 - **Security**: JWT authentication, input validation
 
 ### Frontend
+
 - **Framework**: React 18 with TypeScript
 - **UI Library**: TailwindCSS
 - **Animations**: Framer Motion
@@ -88,6 +96,7 @@ An intelligent platform that:
 - **Build Tool**: Vite
 
 ### DevOps
+
 - **Containerization**: Docker & Docker Compose
 - **CI/CD**: GitHub Actions ready
 - **Deployment**: Heroku, Vercel, AWS, Azure, GCP compatible
@@ -123,18 +132,21 @@ An intelligent platform that:
 ## 🤖 AI Models & Algorithms
 
 ### Risk Assessment AI
+
 - **Multi-factor analysis**: 6 risk types evaluated simultaneously
 - **Weighted scoring system**: Location-specific risk calculations
 - **Confidence metrics**: Data quality and completeness assessment
 - **Pattern recognition**: Historical climate trend analysis
 
 ### Action Planning AI
+
 - **Priority matrix**: Risk level × Impact score × Cost optimization
 - **Personalization engine**: User profile and constraint consideration
 - **Resource allocation**: Budget-aware recommendation generation
 - **Timeline optimization**: Urgency-based action scheduling
 
 ### Prediction Models
+
 - **Time-series forecasting**: 30-year climate projections
 - **Scenario modeling**: Multiple future pathways analysis
 - **Trend detection**: Temperature, precipitation, sea level patterns
@@ -145,6 +157,7 @@ An intelligent platform that:
 ## 📊 Impact Metrics
 
 ### User Benefits
+
 - ✅ **70% reduction** in climate risk assessment time
 - ✅ **Personalized** action plans in under 30 seconds
 - ✅ **Cost estimates** for climate preparedness measures
@@ -152,6 +165,7 @@ An intelligent platform that:
 - ✅ **Carbon footprint** tracking and reduction guidance
 
 ### Scalability
+
 - 🌐 **Global coverage**: Works for any location worldwide
 - 📈 **Unlimited users**: Scalable architecture
 - 🔄 **Real-time updates**: Live climate data integration
@@ -162,6 +176,7 @@ An intelligent platform that:
 ## 🎨 User Experience Highlights
 
 ### Design Principles
+
 - **Intuitive**: Clear navigation and user flow
 - **Responsive**: Mobile, tablet, and desktop optimized
 - **Accessible**: WCAG compliance considerations
@@ -169,6 +184,7 @@ An intelligent platform that:
 - **Fast**: Optimized performance (<2s load time)
 
 ### Key UX Features
+
 - Animated transitions and micro-interactions
 - Color-coded risk levels for quick understanding
 - Progress indicators for long-running operations
@@ -180,6 +196,7 @@ An intelligent platform that:
 ## 🚀 Getting Started
 
 ### Option 1: Quick Start (5 minutes)
+
 ```bash
 # Clone repository
 git clone https://github.com/AA-maker-dev/Climate-Risk-and-Action-Planner.git
@@ -191,11 +208,13 @@ start.bat   # Windows
 ```
 
 ### Option 2: Docker (2 minutes)
+
 ```bash
 docker-compose up --build
 ```
 
 ### Option 3: Manual Setup (10 minutes)
+
 See [SETUP.md](SETUP.md) for detailed instructions
 
 ---
