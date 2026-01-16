@@ -1,0 +1,38 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#0EA5E9"/>
+  
+  <!-- Earth/Globe -->
+  <circle cx="100" cy="110" r="50" fill="#22C55E"/>
+  
+  <!-- Continents (simplified) -->
+  <path d="M80 100 Q85 95 90 100 L95 95 Q100 90 105 95 L110 100 Q115 105 110 110 L105 115 Q100 120 95 115 L90 110 Q85 105 80 100Z" fill="#15803D"/>
+  <path d="M105 105 Q110 100 115 105 L120 110 Q125 115 120 120 L115 125 Q110 130 105 125Z" fill="#15803D"/>
+  
+  <!-- Cloud with AI chip -->
+  <g transform="translate(100, 60)">
+    <!-- Cloud -->
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="white" opacity="0.9"/>
+    <circle cx="-15" cy="0" r="12" fill="white" opacity="0.9"/>
+    <circle cx="15" cy="0" r="12" fill="white" opacity="0.9"/>
+    
+    <!-- AI Chip/Circuit -->
+    <rect x="-8" y="-6" width="16" height="12" rx="2" fill="#0284C7"/>
+    <circle cx="-4" cy="-2" r="1.5" fill="white"/>
+    <circle cx="4" cy="-2" r="1.5" fill="white"/>
+    <circle cx="-4" cy="2" r="1.5" fill="white"/>
+    <circle cx="4" cy="2" r="1.5" fill="white"/>
+  </g>
+  
+  <!-- Warning/Alert symbol -->
+  <g transform="translate(140, 140)">
+    <circle cx="0" cy="0" r="15" fill="#F59E0B"/>
+    <path d="M0 -8 L0 2 M0 5 L0 6" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Protection Shield -->
+  <g transform="translate(60, 140)">
+    <path d="M0 -12 L8 -8 L8 4 Q8 12 0 15 Q-8 12 -8 4 L-8 -8 Z" fill="#10B981"/>
+    <path d="M-3 0 L0 4 L6 -4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
