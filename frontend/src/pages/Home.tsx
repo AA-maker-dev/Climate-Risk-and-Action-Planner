@@ -49,7 +49,7 @@ const Home = () => {
   ]
 
   return (
-    <div className="space-y-16">
+    <div className="w-full space-y-16">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
