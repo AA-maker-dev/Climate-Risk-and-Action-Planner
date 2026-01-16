@@ -7,6 +7,7 @@ import ActionPlan from './pages/ActionPlan'
 import CarbonFootprint from './pages/CarbonFootprint'
 import Predictions from './pages/Predictions'
 import Dashboard from './pages/Dashboard'
+import Debug from './pages/Debug'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/footprint" element={<CarbonFootprint />} />
             <Route path="/predictions" element={<Predictions />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/debug" element={<Debug />} />
           </Routes>
         </main>
         <Toaster position="top-right" />
