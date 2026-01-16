@@ -222,6 +222,7 @@ See [SETUP.md](SETUP.md) for detailed instructions
 ## 📈 Future Enhancements
 
 ### Phase 2 (3 months)
+
 - [ ] Mobile applications (iOS & Android)
 - [ ] Real-time alerts and notifications
 - [ ] Community features and social sharing
@@ -229,6 +230,7 @@ See [SETUP.md](SETUP.md) for detailed instructions
 - [ ] Gamification and achievement system
 
 ### Phase 3 (6 months)
+
 - [ ] IoT sensor integration
 - [ ] Blockchain for carbon credit tracking
 - [ ] AR/VR climate scenario visualization
@@ -236,6 +238,7 @@ See [SETUP.md](SETUP.md) for detailed instructions
 - [ ] Enterprise features and team collaboration
 
 ### Phase 4 (12 months)
+
 - [ ] Government and policy maker tools
 - [ ] Insurance integration and pricing
 - [ ] Climate finance marketplace
@@ -259,12 +262,14 @@ See [SETUP.md](SETUP.md) for detailed instructions
 ## 💰 Business Model
 
 ### Target Markets
+
 1. **B2C**: Individual homeowners and families
 2. **B2B**: Insurance companies, real estate, construction
 3. **B2G**: Government agencies, urban planners
 4. **B2B2C**: Utility companies, community organizations
 
 ### Revenue Streams
+
 - Freemium model (basic features free, advanced features paid)
 - Enterprise licenses for organizations
 - API access for developers and researchers
@@ -276,6 +281,7 @@ See [SETUP.md](SETUP.md) for detailed instructions
 ## 👥 Team & Expertise
 
 This project showcases expertise in:
+
 - Full-stack web development
 - AI/ML model development and deployment
 - Climate science and environmental data analysis
@@ -288,6 +294,7 @@ This project showcases expertise in:
 ## 🌟 Demo Walkthrough
 
 ### Step 1: Risk Assessment
+
 1. Enter location (e.g., "Miami, Florida")
 2. AI analyzes 6 risk factors
 3. Receive comprehensive risk report with:
@@ -297,6 +304,7 @@ This project showcases expertise in:
    - Detailed breakdown by risk type
 
 ### Step 2: Action Plan
+
 1. Generate personalized action plan
 2. Review prioritized recommendations
 3. See cost estimates and impact scores
