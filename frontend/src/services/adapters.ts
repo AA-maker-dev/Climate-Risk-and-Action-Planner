@@ -78,10 +78,26 @@ export const adaptCarbonFootprint = (
   return {
     id: `footprint_${Date.now()}`,
     userId,
-    transportation: apiResponse.transportation || {},
-    energy: apiResponse.energy || {},
-    food: apiResponse.food || {},
-    goods: apiResponse.goods || {},
+    transportation: {
+      car: apiResponse.transportation?.car || 0,
+      public_transit: apiResponse.transportation?.public_transit || 0,
+      flights: apiResponse.transportation?.flights || 0,
+    },
+    energy: {
+      electricity: apiResponse.energy?.electricity || 0,
+      gas: apiResponse.energy?.gas || 0,
+      heating_oil: apiResponse.energy?.heating_oil || 0,
+    },
+    food: {
+      beef: apiResponse.food?.beef || 0,
+      chicken: apiResponse.food?.chicken || 0,
+      dairy: apiResponse.food?.dairy || 0,
+    },
+    goods: {
+      clothing: apiResponse.goods?.clothing || 0,
+      electronics: apiResponse.goods?.electronics || 0,
+      furniture: apiResponse.goods?.furniture || 0,
+    },
     totalEmissions: apiResponse.total_emissions || 0,
     offset: apiResponse.offset || 0,
     timestamp: apiResponse.timestamp || new Date().toISOString(),
