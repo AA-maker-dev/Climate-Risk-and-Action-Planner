@@ -9,6 +9,7 @@ The **AI Climate Risk and Action Planner** is a comprehensive web application th
 ## 🎯 Problem Statement
 
 Climate change poses unprecedented challenges:
+
 - **90% of natural disasters** are now climate-related
 - **$650 billion** in annual economic losses from climate events
 - **Lack of personalized guidance** for climate preparedness
