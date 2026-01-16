@@ -3,14 +3,15 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { MapPin, Loader, AlertCircle, CheckCircle2 } from 'lucide-react'
 import toast from 'react-hot-toast'
-import { assessRisk, RiskAssessmentResponse } from '../services/api'
+import { assessRisk, type RiskAssessmentResponse } from '../services/api'
+import { adaptRiskAssessment } from '../services/adapters'
 import { useStore } from '../store/useStore'
 
 const RiskAssessment = () => {
   const [location, setLocation] = useState('')
   const [loading, setLoading] = useState(false)
   const [assessment, setAssessmentData] = useState<RiskAssessmentResponse | null>(null)
-  const { setAssessment } = useStore()
+  const { setAssessment, addAssessmentToHistory } = useStore()
   const navigate = useNavigate()
 
   const handleAssess = async (e: React.FormEvent) => {
@@ -26,7 +27,12 @@ const RiskAssessment = () => {
     try {
       const result = await assessRisk({ location })
       setAssessmentData(result)
-      setAssessment(result)
+      
+      // Adapt API response to store types
+      const adaptedAssessment = adaptRiskAssessment(result)
+      setAssessment(adaptedAssessment)
+      addAssessmentToHistory(adaptedAssessment)
+      
       toast.success('Risk assessment completed!')
     } catch (error: any) {
       toast.error(error.response?.data?.detail || 'Failed to assess risk')
