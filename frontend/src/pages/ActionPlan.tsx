@@ -2,17 +2,19 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Target, Loader, DollarSign, TrendingUp, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
-import { generateActionPlan, ActionPlanResponse } from '../services/api'
+import { generateActionPlan, type ActionPlanResponse, type RiskAssessmentResponse } from '../services/api'
+import { adaptActionPlan } from '../services/adapters'
 import { useStore } from '../store/useStore'
+import type { RiskAssessment } from '../types'
 
 const ActionPlan = () => {
-  const { currentAssessment, currentActionPlan, setActionPlan } = useStore()
+  const { currentAssessment, currentActionPlan, setActionPlan, addActionPlanToHistory } = useStore()
   const [loading, setLoading] = useState(false)
-  const [plan, setPlan] = useState<ActionPlanResponse | null>(currentActionPlan)
+  const [plan, setPlan] = useState<ActionPlanResponse | null>(null)
 
   useEffect(() => {
     if (currentActionPlan) {
-      setPlan(currentActionPlan)
+      setPlan(null) // Reset since we now work with adapted types
     }
   }, [currentActionPlan])
 
@@ -25,12 +27,36 @@ const ActionPlan = () => {
     setLoading(true)
     
     try {
+      // Convert store type back to API type for the request
+      const apiAssessment: RiskAssessmentResponse = {
+        location: currentAssessment.location,
+        latitude: currentAssessment.latitude,
+        longitude: currentAssessment.longitude,
+        overall_risk_score: currentAssessment.overallRisk,
+        risk_level: currentAssessment.riskLevel.toLowerCase(),
+        risk_breakdown: currentAssessment.risks.reduce((acc, r) => {
+          acc[r.type] = r.score
+          return acc
+        }, {} as Record<string, number>),
+        top_risks: currentAssessment.risks
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 3)
+          .map((r) => ({ type: r.type, score: r.score })),
+        assessment_date: currentAssessment.timestamp,
+        confidence: currentAssessment.confidence,
+      }
+
       const result = await generateActionPlan({
         location: currentAssessment.location,
-        risk_assessment: currentAssessment,
+        risk_assessment: apiAssessment,
       })
       setPlan(result)
-      setActionPlan(result)
+      
+      // Adapt API response and store it
+      const adaptedPlan = adaptActionPlan(result, currentAssessment.id)
+      setActionPlan(adaptedPlan)
+      addActionPlanToHistory(adaptedPlan)
+      
       toast.success('Action plan generated!')
     } catch (error: any) {
       toast.error(error.response?.data?.detail || 'Failed to generate action plan')
