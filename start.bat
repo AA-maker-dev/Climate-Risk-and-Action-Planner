@@ -6,13 +6,13 @@ echo.
 
 echo Starting Backend...
 cd backend
-start cmd /k "python -m venv venv && venv\Scripts\activate && pip install -r requirements.txt && python app.py"
+start cmd /k "D:/Hackathon/Hackathon#3/.venv/Scripts/python.exe -m uvicorn app:app --reload --host 0.0.0.0 --port 8000"
 
 timeout /t 5 /nobreak > nul
 
 echo Starting Frontend...
 cd ..\frontend
-start cmd /k "npm install && npm run dev"
+start cmd /k "npm run dev"
 
 echo.
 echo ========================================
