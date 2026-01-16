@@ -5,7 +5,6 @@ import toast from 'react-hot-toast'
 import { generateActionPlan, type ActionPlanResponse, type RiskAssessmentResponse } from '../services/api'
 import { adaptActionPlan } from '../services/adapters'
 import { useStore } from '../store/useStore'
-import type { RiskAssessment } from '../types'
 
 const ActionPlan = () => {
   const { currentAssessment, currentActionPlan, setActionPlan, addActionPlanToHistory } = useStore()
