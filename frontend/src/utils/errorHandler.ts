@@ -12,9 +12,9 @@ export class ApiError extends Error {
   }
 }
 
-export const handleApiError = (error: unknown): ApiError => {
-  if (axios.isAxiosError(error)) {
-    const axiosError = error as AxiosError<{
+export const handleApiError = (err: unknown): ApiError => {
+  if (axios.isAxiosError(err)) {
+    const axiosError = err as AxiosError<{
       detail?: string;
       message?: string;
       errors?: Record<string, string[]>;
@@ -60,9 +60,9 @@ export const handleApiError = (error: unknown): ApiError => {
     return apiError;
   }
 
-  const error = new ApiError(500, 'An unexpected error occurred');
-  toast.error(error.message);
-  return error;
+  const apiErr = new ApiError(500, 'An unexpected error occurred');
+  toast.error(apiErr.message);
+  return apiErr;
 };
 
 export const retryApiCall = async <T,>(
@@ -75,12 +75,12 @@ export const retryApiCall = async <T,>(
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     try {
       return await fn();
-    } catch (error) {
-      lastError = error as Error;
+    } catch (caught) {
+      lastError = caught as Error;
 
       // Don't retry on 4xx errors
-      if (axios.isAxiosError(error) && error.response?.status?.toString().startsWith('4')) {
-        throw handleApiError(error);
+      if (axios.isAxiosError(caught) && caught.response?.status?.toString().startsWith('4')) {
+        throw handleApiError(caught);
       }
 
       // Wait before retrying
