@@ -52,10 +52,43 @@ export interface FootprintRequest {
   unit: string
 }
 
+export interface FootprintResponse {
+  transportation?: Record<string, number>
+  energy?: Record<string, number>
+  food?: Record<string, number>
+  goods?: Record<string, number>
+  total_emissions: number
+  offset: number
+  timestamp: string
+}
+
 export interface PredictionRequest {
   latitude: number
   longitude: number
   years?: number
+}
+
+export interface PredictionResponse {
+  years: number
+  scenarios: Array<{
+    name: 'optimistic' | 'moderate' | 'pessimistic'
+    temperature_change: number
+    precipitation_change: number
+    sea_level_rise: number
+  }>
+  trends: Array<{
+    metric: string
+    historical_data: number[]
+    projection: number[]
+    change_percentage: number
+  }>
+  extreme_events: Array<{
+    type: string
+    probability: number
+    expected_frequency: string
+    severity: string
+  }>
+  timestamp: string
 }
 
 // Risk Assessment API
