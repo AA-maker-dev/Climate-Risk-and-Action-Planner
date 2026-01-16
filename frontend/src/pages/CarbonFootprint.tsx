@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Leaf, Plus, Trash2, TrendingDown } from 'lucide-react'
+import { Leaf, Plus, TrendingDown } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { calculateFootprint, getFootprintSummary, getFootprintCategories } from '../services/api'
 import { useStore } from '../store/useStore'
