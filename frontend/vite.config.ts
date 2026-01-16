@@ -1,39 +1,31 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import fs from 'fs'
 
-const hashResolvePlugin = {
-  name: 'hash-resolve',
-  enforce: 'pre' as const,
-  async resolveId(source: string) {
-    // Handle special case where # in path might cause issues
-    if (source.includes('%23') || (source.startsWith('/') && source.includes('#'))) {
-      const decoded = decodeURIComponent(source)
-      const resolved = path.resolve(__dirname, './src', decoded.replace(/^\/src\//, ''))
-      return resolved
-    }
-  },
-}
+// Get the current working directory
+const cwd = process.cwd()
+const srcDir = path.join(cwd, 'src')
 
 export default defineConfig({
-  plugins: [hashResolvePlugin, react()],
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': srcDir,
     },
   },
   server: {
     port: 3000,
     strictPort: false,
-    middlewareMode: false,
+    host: '127.0.0.1',
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'http://127.0.0.1:8000',
         changeOrigin: true,
       },
     },
     fs: {
-      allow: ['..'],
+      allow: ['.'],
       strict: false,
     },
   },
